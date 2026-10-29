@@ -1,68 +1,133 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syed &amp; Saba | Save the Date</title>
+<title>SYED & SABA | Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080808;color:#f8f1df;font-family:Georgia,serif;text-align:center}
-main{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px}
-.card{width:100%;max-width:650px;border:1px solid #c6a45b;padding:42px 22px;background:linear-gradient(145deg,#17130d,#050505);box-shadow:0 0 35px #c6a45b22}
-.top{color:#d7b66b;letter-spacing:5px;font-size:12px}
-h1{font-size:clamp(42px,10vw,76px);font-weight:normal;color:#e4c779;margin:30px 0 12px}
-.amp{color:#fff}
-.subtitle{letter-spacing:4px;font-size:13px;margin:25px 0;color:#e6d9b7}
-.date{font-size:23px;color:#e4c779;margin:20px 0 8px}
-.place{letter-spacing:3px;font-size:12px}
-.line{height:1px;background:#b99a52;width:65%;margin:30px auto}
-#timer{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.unit{border:1px solid #8e733a;padding:15px 10px;min-width:75px}
-.num{display:block;font-size:29px;color:#e4c779}
-.label{font:10px Arial,sans-serif;letter-spacing:2px;margin-top:8px;display:block}
-.note{font-size:16px;line-height:1.8;color:#d8ccb0}
-footer{color:#c6a45b;font-size:12px;letter-spacing:2px;margin-top:32px}
+body{margin:0;background:#fff9f5;color:#63434c;font-family:Montserrat,sans-serif}
+.page{min-height:100svh;display:none;align-items:center;justify-content:center;text-align:center;padding:24px;background:radial-gradient(ellipse at top,#f8e2e7,transparent 65%),linear-gradient(135deg,#fffaf4,#f9eee8)}
+.page.active{display:flex;animation:fade .7s ease}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.frame{width:min(100%,480px);min-height:78svh;border:1px solid #c7a66a;outline:1px solid #e6d5b5;outline-offset:-8px;border-radius:180px 180px 12px 12px;padding:45px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#a08050}
+.script{font-family:'Great Vibes',cursive;font-size:clamp(65px,17vw,100px);color:#b86e81;line-height:1.25;margin:12px 0}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;letter-spacing:3px;font-size:clamp(27px,7vw,38px)}
+h2{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:500}
+p{font-size:11px;line-height:2;letter-spacing:1.5px}
+.ornament{font-size:25px;color:#bd9856;margin:12px}
+.smallscript{font-family:'Great Vibes',cursive;color:#bd9856;font-size:31px}
+button{margin-top:25px;padding:14px 24px;border:1px solid #bd9856;background:#fffaf5;color:#63434c;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer}
+button:hover{background:#bd9856;color:white}
+.flower{position:absolute;color:#c28d99;font-size:24px;opacity:.65}
+.a{top:30px;left:25px}.b{top:65px;right:25px}.c{bottom:35px;left:25px}.d{bottom:25px;right:25px}
+.cover{border-radius:12px;min-height:70svh}
+.cover-title{font-family:'Great Vibes',cursive;font-size:clamp(48px,12vw,75px);line-height:1.3;color:#b86e81}
+.story{max-width:350px;font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.65}
+.story strong{color:#b86e81}
+.countdown{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:20px 0}
+.time{padding:14px 1px;background:#fffdfb;border:1px solid #e0c99d}
+.time strong{display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(23px,6vw,34px);color:#b86e81;font-weight:500}
+.time span{font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.footer{font-size:9px;letter-spacing:2px;color:#a08050;margin-top:20px}
 </style>
 </head>
 <body>
-<main>
-<section class="card">
-<div class="top">✦ A NEW CHAPTER BEGINS ✦</div>
-<h1>Syed <span class="amp">&amp;</span><br>Saba</h1>
-<div class="subtitle">SAVE THE DATE</div>
-<p class="note">Two hearts, one destiny,<br>a lifetime of love.</p>
-<div class="line"></div>
-<div class="date">December 5, 2027</div>
-<div class="place">CHENNAI · INDIA</div>
-<div class="line"></div>
-<p class="subtitle">COUNTING DOWN TO FOREVER</p>
-<div id="timer">
-<div class="unit"><span class="num" id="days">0</span><span class="label">DAYS</span></div>
-<div class="unit"><span class="num" id="hours">00</span><span class="label">HOURS</span></div>
-<div class="unit"><span class="num" id="minutes">00</span><span class="label">MINUTES</span></div>
-<div class="unit"><span class="num" id="seconds">00</span><span class="label">SECONDS</span></div>
+
+<section class="page active" id="cover">
+<div class="frame cover">
+<span class="flower a">✿</span><span class="flower b">❀</span>
+<div class="eyebrow">A little story called forever</div>
+<div class="ornament">♡</div>
+<div class="cover-title">A Love Story<br>Written in Destiny</div>
+<div class="ornament">✧ ❦ ✧</div>
+<p>ONE STORY · TWO HEARTS · ONE DESTINY</p>
+<button onclick="go('bride')">Tap to Open ♡</button>
+<div class="footer">OUR JOURNEY BEGINS HERE</div>
+</div></section>
+
+<section class="page" id="bride">
+<div class="frame">
+<span class="flower a">❀</span><span class="flower b">✿</span>
+<div class="eyebrow">The Bride</div><div class="ornament">♡</div>
+<div class="script">Saba</div>
+<h1>S A B A</h1>
+<div class="smallscript">The girl in his destiny</div>
+<div class="ornament">✧ ❦ ✧</div>
+<p>THE BEGINNING OF FOREVER</p>
+<button onclick="go('groom')">Next Page →</button>
+</div></section>
+
+<section class="page" id="groom">
+<div class="frame">
+<span class="flower a">✿</span><span class="flower b">❀</span>
+<div class="eyebrow">The Groom</div><div class="ornament">♡</div>
+<div class="script">Syed</div>
+<h1>S Y E D</h1>
+<div class="smallscript">The man written for her</div>
+<div class="ornament">✧ ❦ ✧</div>
+<p>TWO SOULS · ONE DESTINY</p>
+<button onclick="go('story')">Our Story →</button>
+</div></section>
+
+<section class="page" id="story">
+<div class="frame">
+<span class="flower a">❀</span><span class="flower b">✿</span>
+<div class="eyebrow">Our Love Story</div>
+<h1>Written in Destiny</h1>
+<div class="ornament">♡</div>
+<div class="story">
+From <strong>Chennai</strong> to <strong>Abu Dhabi</strong>, two lives began a journey neither could have imagined.
+<br><br>
+What started as an arranged marriage proposal slowly became a beautiful story of two hearts finding their way to each other.
+<br><br>
+Now <strong>Syed & Saba</strong> are ready to begin their forever.
 </div>
-<div class="line"></div>
-<p class="note">Our forever starts with a beautiful “Bismillah”.</p>
-<footer>WITH LOVE · SYED &amp; SABA</footer>
-</section>
-</main>
+<div class="smallscript">Some stories are written in the stars...</div>
+<button onclick="go('date')">The Big Day →</button>
+</div></section>
+
+<section class="page" id="date">
+<div class="frame">
+<span class="flower a">❀</span><span class="flower b">✿</span>
+<div class="eyebrow">With love, we invite you</div>
+<div class="script" style="font-size:clamp(47px,12vw,72px)">Syed & Saba</div>
+<h1>SAVE THE DATE</h1>
+<div class="ornament">✧ ♡ ✧</div>
+<h2>05 · 12 · 2027</h2>
+<p>DECEMBER 5, 2027 · CHENNAI</p>
+<div class="countdown">
+<div class="time"><strong id="days">000</strong><span>Days</span></div>
+<div class="time"><strong id="hours">00</strong><span>Hours</span></div>
+<div class="time"><strong id="minutes">00</strong><span>Minutes</span></div>
+<div class="time"><strong id="seconds">00</strong><span>Seconds</span></div>
+</div>
+<div class="smallscript">A forever begins...</div>
+<div class="footer">TWO HEARTS · ONE DESTINY · FOREVER</div>
+</div></section>
+
 <script>
-function updateCountdown(){
-const target=new Date("2027-12-05T00:00:00+05:30").getTime();
-const diff=target-Date.now();
-if(diff<=0){
-document.getElementById("timer").innerHTML="THE BIG DAY IS HERE! ♥";
-return;
+function go(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
 }
-document.getElementById("days").textContent=Math.floor(diff/86400000);
-document.getElementById("hours").textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,"0");
-document.getElementById("minutes").textContent=String(Math.floor(diff%3600000/60000)).padStart(2,"0");
-document.getElementById("seconds").textContent=String(Math.floor(diff%60000/1000)).padStart(2,"0");
+function countdown(){
+ const target=new Date('2027-12-05T00:00:00+05:30').getTime();
+ let d=target-Date.now();
+ if(d<0)d=0;
+ document.getElementById('days').textContent=String(Math.floor(d/86400000)).padStart(3,'0');
+ document.getElementById('hours').textContent=String(Math.floor(d/3600000)%24).padStart(2,'0');
+ document.getElementById('minutes').textContent=String(Math.floor(d/60000)%60).padStart(2,'0');
+ document.getElementById('seconds').textContent=String(Math.floor(d/1000)%60).padStart(2,'0');
 }
-updateCountdown();
-setInterval(updateCountdown,1000);
+countdown();setInterval(countdown,1000);
 </script>
 </body>
 </html>
+
+
