@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed &amp; Saba | Save the Date</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#f8f1df;font-family:Georgia,serif;text-align:center}
+main{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px}
+.card{width:100%;max-width:650px;border:1px solid #c6a45b;padding:42px 22px;background:linear-gradient(145deg,#17130d,#050505);box-shadow:0 0 35px #c6a45b22}
+.top{color:#d7b66b;letter-spacing:5px;font-size:12px}
+h1{font-size:clamp(42px,10vw,76px);font-weight:normal;color:#e4c779;margin:30px 0 12px}
+.amp{color:#fff}
+.subtitle{letter-spacing:4px;font-size:13px;margin:25px 0;color:#e6d9b7}
+.date{font-size:23px;color:#e4c779;margin:20px 0 8px}
+.place{letter-spacing:3px;font-size:12px}
+.line{height:1px;background:#b99a52;width:65%;margin:30px auto}
+#timer{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.unit{border:1px solid #8e733a;padding:15px 10px;min-width:75px}
+.num{display:block;font-size:29px;color:#e4c779}
+.label{font:10px Arial,sans-serif;letter-spacing:2px;margin-top:8px;display:block}
+.note{font-size:16px;line-height:1.8;color:#d8ccb0}
+footer{color:#c6a45b;font-size:12px;letter-spacing:2px;margin-top:32px}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+<div class="top">✦ A NEW CHAPTER BEGINS ✦</div>
+<h1>Syed <span class="amp">&amp;</span><br>Saba</h1>
+<div class="subtitle">SAVE THE DATE</div>
+<p class="note">Two hearts, one destiny,<br>a lifetime of love.</p>
+<div class="line"></div>
+<div class="date">December 5, 2027</div>
+<div class="place">CHENNAI · INDIA</div>
+<div class="line"></div>
+<p class="subtitle">COUNTING DOWN TO FOREVER</p>
+<div id="timer">
+<div class="unit"><span class="num" id="days">0</span><span class="label">DAYS</span></div>
+<div class="unit"><span class="num" id="hours">00</span><span class="label">HOURS</span></div>
+<div class="unit"><span class="num" id="minutes">00</span><span class="label">MINUTES</span></div>
+<div class="unit"><span class="num" id="seconds">00</span><span class="label">SECONDS</span></div>
+</div>
+<div class="line"></div>
+<p class="note">Our forever starts with a beautiful “Bismillah”.</p>
+<footer>WITH LOVE · SYED &amp; SABA</footer>
+</section>
+</main>
+<script>
+function updateCountdown(){
+const target=new Date("2027-12-05T00:00:00+05:30").getTime();
+const diff=target-Date.now();
+if(diff<=0){
+document.getElementById("timer").innerHTML="THE BIG DAY IS HERE! ♥";
+return;
+}
+document.getElementById("days").textContent=Math.floor(diff/86400000);
+document.getElementById("hours").textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,"0");
+document.getElementById("minutes").textContent=String(Math.floor(diff%3600000/60000)).padStart(2,"0");
+document.getElementById("seconds").textContent=String(Math.floor(diff%60000/1000)).padStart(2,"0");
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
